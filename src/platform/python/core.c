@@ -14,7 +14,9 @@ struct mCoreCallbacks* mCorePythonCallbackCreate(void* pyobj) {
 	callbacks->coreCrashed = _mCorePythonCallbacksCoreCrashed;
 	callbacks->sleep = _mCorePythonCallbacksSleep;
 	callbacks->keysRead = _mCorePythonCallbacksKeysRead;
-
+	callbacks->shutdown = NULL;  // Not implemented in Python bindings
+	callbacks->savedataUpdated = NULL;  // Not implemented in Python bindings
+	callbacks->alarm = NULL;  // Not implemented in Python bindings
 	callbacks->context = pyobj;
 	return callbacks;
 }
